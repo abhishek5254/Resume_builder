@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/your-username/your-java-repo.git'
+                git branch: 'main', url: 'https://github.com/abhishek5254/Resume_builder.git'
             }
         }
         stage('Build Java Application') {
@@ -17,7 +17,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    def app = docker.build("your-dockerhub-username/your-app:${env.BUILD_NUMBER}")
+                    def app = docker.build("abhishek7380/resume-builder:${env.BUILD_NUMBER}")
                 }
             }
         }
